@@ -1,0 +1,20 @@
+  <div class="stock-list">
+    <h1>Available Stocks</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Company Name</th>
+          <th>Current Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let stock of stocks">
+          <td>{{ stock.stockName }}</td>
+          <td>${{ stock.price }}</td>
+          <td><button class="buy-button" (click)="openOrderList(stock, $event)">Buy</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

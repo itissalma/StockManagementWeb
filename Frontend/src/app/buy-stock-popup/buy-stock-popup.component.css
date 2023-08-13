@@ -1,0 +1,38 @@
+mat-card{
+    margin: 2%;
+    text-align: left;
+}
+
+.mat-mdc-form-field {
+    width: 98%;
+    margin: 1%;
+}
+
+.mat-50{
+    width: 48%;
+    margin: 1%;
+}
+
+button{
+    display: flex;
+    margin: 10px;
+    align-items: center;
+}
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    padding-top: -30px;
+  }
+  .confirmation-message, .failed-confirmation-message{
+    margin-top: 10px;
+    color: green;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }

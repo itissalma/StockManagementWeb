@@ -1,0 +1,50 @@
+<div class="create-account-container">
+    <h1>Create Account</h1>
+    <form [formGroup]="createAccountForm" (ngSubmit)="onSubmit()">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" formControlName="username">
+        <div *ngIf="formControls.username.invalid && (formControls.username.dirty || formControls.username.touched)">
+          <div *ngIf="formControls.username.errors?.required" class="error-message">Username is required.</div>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="natID">National ID</label>
+        <input type="text" id="natID" name="natID" placeholder="Enter your National ID" formControlName="natID">
+        <!-- If the national id isn't 14 characters long, emit error message -->
+        <div *ngIf="formControls.natID.invalid && (formControls.natID.dirty || formControls.natID.touched)">
+          <div *ngIf="formControls.natID.errors?.required" class="error-message">National ID is required.</div>
+          <div *ngIf="formControls.natID.errors?.minlength" class="error-message">National ID must be 14 characters long.</div>
+        <div *ngIf="formControls.natID.errors?.maxlength" class="error-message">National ID must be 14 characters long.</div>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" formControlName="email">
+        <div *ngIf="formControls.email.invalid && (formControls.email.dirty || formControls.email.touched)">
+          <div *ngIf="formControls.email.errors?.required" class="error-message">Email is required.</div>
+          <div *ngIf="formControls.email.errors?.email" class="error-message">Invalid email format.</div>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" formControlName="password">
+        <div *ngIf="formControls.password.invalid && (formControls.password.dirty || formControls.password.touched)">
+          <div *ngIf="formControls.password.errors?.required" class="error-message">Password is required.</div>
+          <div *ngIf="formControls.password.errors?.minlength" class="error-message">Password must be at least 6 characters long.</div>
+        </div>
+      </div>
+      <div class="input-group">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" formControlName="confirmPassword">
+        <div *ngIf="formControls.confirmPassword.invalid && (formControls.confirmPassword.dirty || formControls.confirmPassword.touched)">
+          <div *ngIf="formControls.confirmPassword.errors?.required" class="error-message">Confirm Password is required.</div>
+        </div>
+        <div *ngIf="formData.confirmPassword !== formData.password" class="error-message">Passwords do not match.</div>
+      </div>
+      <button class="btn-primary" type="submit" [disabled]="createAccountForm.invalid">Create Account</button>
+      <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    </form>
+  </div>
+  

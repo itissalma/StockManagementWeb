@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* styles.css */
+
+/* Navbar */
+.navbar {
+    background-color: white;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 24px;
+  }
+  
+  .navbar-logo {
+    padding-top: 40px;
+    color: #333;
+    padding-top: 30px;
+    text-decoration: none;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-item {
+    margin: 0;
+  }
+  
+  .nav-link {
+    color: #333;;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.2s;
+    padding-right: 25px;
+  }
+  
+  .nav-link:hover {
+    color: #2D4059;
+  }
+  

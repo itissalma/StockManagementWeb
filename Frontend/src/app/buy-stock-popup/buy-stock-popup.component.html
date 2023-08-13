@@ -1,0 +1,23 @@
+<div class="buy-stock-popup">
+    <h1 mat-dialog-title>{{ stockData.stockName }}</h1>
+    <div mat-dialog-content>
+      <p>Company Name: {{ stockData.stockName }}</p>
+      <p>Current Price: ${{ stockData.price }}</p>
+      <mat-form-field>
+        <mat-label>Quantity</mat-label>
+        <input matInput type="number" [(ngModel)]="quantity" (ngModelChange)="calculateTotalPrice()">
+      </mat-form-field>
+      <p>Total Price: ${{ totalPrice }}</p>
+    </div>
+    <div class="button-container">
+      <button mat-raised-button type="button" color="primary" (click)="buyStock()">Buy</button>
+    </div>
+    <!---Add confirmation message-->
+    <div *ngIf="showConfirmation" class="confirmation-message">
+      <p>Order placed successfully!</p>
+    </div>
+    <div *ngIf="showFailed" class="failed-confirmation-message" style=" color: red">
+        <p>Enter a quantity above 0</p>
+      </div>
+  </div>
+  

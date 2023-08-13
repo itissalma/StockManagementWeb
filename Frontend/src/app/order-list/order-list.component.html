@@ -1,0 +1,24 @@
+
+<div class="orders-container">
+    <h2 class="section-title">Recent Orders</h2>
+    <table class="orders-table">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Stock</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>User</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders; let i = index">
+          <td class="order-id">#{{ order.orderId }}</td>
+          <td>{{ stockNames[i] }}</td>
+          <td class="order-price">${{ order.price.toFixed(2) }}</td>
+          <td class="order-quantity">{{ order.quantity }}</td>
+          <td class="order-user">{{ order.userName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>  
